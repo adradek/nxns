@@ -1,3 +1,5 @@
+$stdout.sync = true
+
 #---
 # Excerpted from "Modern Front-End Development for Rails",
 # published by The Pragmatic Bookshelf.

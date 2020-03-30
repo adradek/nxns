@@ -2,8 +2,9 @@
   <section>
     <div class="columns is-gapless">
       <% @schedule.schedule_days.each do |schedule_day| %>
-        <div class="column has-text-centered"
-            data-associated="day-body:<%= schedule_day.day.by_example("2006-01-02") %>">
+        <div class="column has-text-centered js--schedule-day"
+             data-associated="day-body:<%= schedule_day.day.by_example("2006-01-02") %>"
+             id="day-toggle-<%= schedule_day.day.by_example("2006-01-02") %>">
           <%= schedule_day.day.by_example("Jan 2") %>
         </div>
       <% end %>
@@ -24,10 +25,10 @@
 
   <br>
 
-  <section>
+  <section class="js--day">
     <% @schedule.schedule_days.each do |schedule_day| %>
-      <section class="js--day day-body"
-               id="day-body:<%= schedule_day.day.by_example("2006-01-02") %>">
+      <section class="day-body"
+               id="day-body-<%= schedule_day.day.by_example("2006-01-02") %>">
         <h2 class="title is-3">
           <%= schedule_day.day.by_example("Monday, January 2, 2006") %>
           <div class="button is-primary js--day-button">

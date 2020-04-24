@@ -6,6 +6,7 @@
     "@rails/activestorage": "*",
     "@rails/ujs": "*",
     "@rails/webpacker": "*",
+    "stimulus": "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz",
     "ts-loader": "*",
     "turbolinks": "*",
     "typescript": "*"

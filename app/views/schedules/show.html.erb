@@ -28,14 +28,15 @@
   <section class="js--day">
     <% @schedule.schedule_days.each do |schedule_day| %>
       <section class="day-body"
-               id="day-body-<%= schedule_day.day.by_example("2006-01-02") %>">
+               id="day-body-<%= schedule_day.day.by_example("2006-01-02") %>"
+               data-controller="day-toggle">
         <h2 class="title is-3">
           <%= schedule_day.day.by_example("Monday, January 2, 2006") %>
-          <div class="button is-primary js--day-button">
+          <div class="button is-primary js--day-button" data-action="click->day-toggle#toggle">
             <span class="js--button-text">Hide</span>
           </div>
         </h2>
-        <section class="js--day-text">
+        <section class="js--day-text" data-day-toggle-target="thingToHide">
           <% schedule_day.concerts.sort_by(&:start_time).each do |concert| %>
             <article class="concert">
               <div class="columns">
